@@ -121,7 +121,7 @@ module.exports = function (grunt) {
         src: [
         '<%= config.dist %>/*.css',
         ],
-        dest: '<%= config.dist %>/styles.css',
+        dest: '<%= config.dist %>/style.css',
       },
     },
     // styleguide generation options
@@ -129,7 +129,8 @@ module.exports = function (grunt) {
       // generated css file to be included in the styleguide
       options: {
         includeType: 'css',
-        includePath: '<%= config.dist %>/mee-ui.css',
+        includePath: '<%= config.dist %>/style.css',
+        template: '<%= config.src %>/styleguide-template',
       },
       dist: {
         files: {
@@ -152,12 +153,12 @@ module.exports = function (grunt) {
     'clean:dist', // cleanu build
     'clean:release', // cleanup release
     'sass', // parse sass files
-    'concat', // merge all the files together to one big file
+    'concat', // merge all the files together to one big file. remove if you want your css files to remain separate
     'cssmin', // create a minified version
-    'clean:singlecssfiles', // cleanup any single css files
+    'clean:singlecssfiles', // cleanup any single css files. remove this if you want to keep generated files
     'copy:assets', // copy assets across
     'copy:release', // copy generated css and assets to public release directory
-    'copy:styleguideIndex', // copy generated css and assets to public release directory
+    'copy:styleguideIndex', // copy generated css and assets to public release directory.
     'kss', // generate styleguide
     'copy:styleguide' // copy styleguide over to the correct location
     ]);

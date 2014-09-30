@@ -123,19 +123,29 @@ The idea is that you code the styleguide inside your CSS comments, and the Style
 Not that description allows to use markdown for better formatting.
 
 ### Example comment block
+```
 /*
+
 Section heading
 
 Description
 
-.additional_class      - modifier class description
+.custom-class-modifier      - modifier class description
 
-Markup: <header><div class="green"></div></header>
+Markup: <header><div class="custom-class {$modifiers}"></div></header>
 
 
 Styleguide 1
 */
+.custom-class{ 
+  color:#000000; 
+}
+.custom-class-modifier{
+  border: 1px solid #000000;
+}
+```
 
+### Heading
 "Styleguide 1" is used in order to create an index, so for example the next element in section could be:
 ```
 Styleguide 1.1
@@ -145,6 +155,32 @@ or if it is a new section, it would be:
 Styleguide 2
 ```
 
+### Decription
+Can be multiline and supports markdown
+
+### Modifiers
+Come one a line and define in the following manner
+```
+.class-name - modifier description
+```
+
+### Markup
+Markup is where you define your elements markup. 
+```
+{$modifiers} - as the KSS processes markup it will loop through modifiers and will replace this with ones defiend in previous section
+```
+
+Note that the "markup" feature is a special feature of grunt-kss.
+
+
 ### More info on KSS
 * http://warpspire.com/kss/syntax/
 * https://github.com/kneath/kss
+
+## Custom template for your styleguide
+If you are not happy with the way the styleguide is generated and if you wish to add custom markup and layout the the styleguide itself you can do so by editing the template files located at:
+```
+src/styleguide-template
+```
+
+Currently this contains exact copy of the KSS default stylesheet taken from "grunt-kss". Grunt task is configured to use the local copy ay the moment and is only intended to give you a head start in case you want to implement your modifications.

@@ -1,0 +1,102 @@
+/* colours */
+/*
+Element alignment
+
+Styleguide 1
+*/
+/*
+Paragraph alignment
+
+A simple example for paragraph text alignment
+## Hint
+```
+The comments section provides support for any markdown so that you can format your documentation
+```
+
+.text-left      - Left align text
+.text-center     - Center align text
+.text-right     - Align text right
+
+Markup: <p class="{$modifiers}">Lorem ipsum dolor sit amet.</p>
+
+Styleguide 1.1
+*/
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* colours */
+/*
+Navigation
+
+Styleguide 2
+*/
+/*
+Navigation example
+
+A collection of helper classes that might be useful to be used throughout the application
+
+.nav-horizontal - Horizontal navigation
+
+Markup:
+<nav class="{$modifiers}">
+<ul>
+<li><a href="#">Products</a></li>
+<li><a href="#">Add</a></li>
+<li><a href="#">Profile</a></li>
+<li><a href="#">Help</a></li>
+<li><a href="#">Logout</a></li>
+</ul>
+<nav>
+
+Styleguide 2.1
+*/
+nav {
+  background-color: #666666;
+  font-size: 0;
+}
+nav.fixed {
+  top: 0;
+  z-index: 2;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  display: inline-block;
+  width: 100%;
+  font-size: 14px;
+}
+nav ul li a, nav ul li a:visited {
+  font-family: Arial;
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 1em 1.5em;
+}
+nav ul li a:hover, nav ul li a:visited:hover {
+  background-color: black;
+  color: white;
+}
+
+.nav-horizontal ul li {
+  width: 100%;
+}
+.nav-horizontal ul li a {
+  text-align: center;
+}
+
+.nav-icons ul li {
+  width: auto;
+  border-right: 1px solid #290b37;
+}

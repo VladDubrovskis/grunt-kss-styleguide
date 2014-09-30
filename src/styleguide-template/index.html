@@ -26,91 +26,70 @@
     <aside>
       <nav><ul>
         <li><a href="index.html">0.0: Overview</a></li>
-        
-          <li><a href="section-1.html">1.0: Element alignment</a></li>
-        
-          <li><a href="section-2.html">2.0: Navigation</a></li>
-        
+        {{#eachRoot}}
+          <li><a href="section-{{reference}}.html">{{reference}}.0: {{header}}</a></li>
+        {{/eachRoot}}
       </ul></nav>
     </aside>
   </div>
   <div role="main" id="kss-main">
     <article id="kss-content">
-      
+      {{#if overview}}
+        {{html overview}}
+      {{else}}
 
-        
-        
-          
-            <h1 class="kss-title"><span class="kss-ref">2.0</span> - Navigation</h1>
-          
-            
-                
-            
-           
-        
-          
-           <section class="kss-depth-2">
-            <h1 class="kss-title"><span class="kss-ref">2.1</span> - Navigation example</h1>
-          
-            
-                <div class="kss-box"><p>A collection of helper classes that might be useful to be used throughout the application</p>
-</div>
+        {{!
+          Find each section, in order.
+          If there's no markup or modifiers supplied, use a Markdown-only
+          layout instead.
+
+          The "root" element comes first in this loop, and can be detected using
+          the "#whenDepth 1" block as seen below.
+        }}
+        {{#eachSection rootNumber}}
+          {{#whenDepth 1}}
+            <h1 class="kss-title"><span class="kss-ref">{{ reference }}.0</span> - {{ header }}</h1>
+          {{else}}
+           <section class="kss-depth-{{ refDepth }}">
+            <h1 class="kss-title"><span class="kss-ref">{{ reference }}</span> - {{ header }}</h1>
+          {{/whenDepth}}
+            {{#ifAny markup modifiers}}
+                <div class="kss-box">{{html description}}</div>
                 <table class="kss-mod-list">
                   <tr class="kss-mod-desc-group">
                     <td class="kss-mod-desc"><p>Default styling</p></td>
                     <td class="kss-mod-name"></td>
                   </tr>
                   <tr class="kss-mod-example">
-                    <td colspan="2"><nav class="{$modifiers}">
-<ul>
-<li><a href="#">Products</a></li>
-<li><a href="#">Add</a></li>
-<li><a href="#">Profile</a></li>
-<li><a href="#">Help</a></li>
-<li><a href="#">Logout</a></li>
-</ul>
-<nav></td>
+                    <td colspan="2">{{modifierMarkup}}</td>
                   </tr>
-                
+                {{#eachModifier}}
                   <tr class="kss-mod-desc-group">
-                    <td class="kss-mod-desc"><p>Horizontal navigation</p>
-</td>
-                    <td class="kss-mod-name"><p>.nav-horizontal</p></td>
+                    <td class="kss-mod-desc">{{html description}}</td>
+                    <td class="kss-mod-name"><p>{{name}}</p></td>
                   </tr>
                   <tr class="kss-mod-example">
-                    <td colspan="2"><nav class="nav-horizontal">
-<ul>
-<li><a href="#">Products</a></li>
-<li><a href="#">Add</a></li>
-<li><a href="#">Profile</a></li>
-<li><a href="#">Help</a></li>
-<li><a href="#">Logout</a></li>
-</ul>
-<nav></td>
+                    <td colspan="2">{{modifierMarkup}}</td>
                   </tr>
-                
+                {{/eachModifier}}
                 </table>
                 <div class="kss-markup">
-                  <pre class="prettyprint lang-html">&lt;nav class=&quot;{$modifiers}&quot;&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Products&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Add&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Profile&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Help&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Logout&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;nav&gt;</pre>
+                  <pre class="prettyprint lang-html">{{markup}}</pre>
                 </div>
-            
-          
+            {{else}}
+                {{#if description}}
+                  {{html description}}
+                {{/if}}
+            {{/ifAny}}
+          {{#whenDepth 1}} {{else}}
             </section>
-          
-        
-      
+          {{/whenDepth}}
+        {{/eachSection}}
+      {{/if}}
     </article>
   </div>
   <footer>
-    
+    {{#if argv.xdemo}}<a href="http://github.com/hughsk/kss-node"><img id="kss-github" style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub"></a>{{/if}}
   </footer>
   <!-- SCRIPTS -->
   <script src="public/kss.js"></script>
@@ -140,7 +119,12 @@
     });
   </script>
 
-  
-  
+  {{! This won't be included in the demo page }}
+  {{#if argv.xdemo}}
+    <script type="text/javascript">
+    var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-12249588-4']); _gaq.push(['_trackPageview']);
+    (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();
+    </script>
+  {{/if}}
 </div></body>
 </html>
