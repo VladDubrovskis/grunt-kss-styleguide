@@ -1,0 +1,54 @@
+@import "variables";
+@import "mixins";
+
+/*
+Element alignmet
+
+Styleguide 1
+*/
+
+/*
+Helper classes
+
+A collection of helper classes that might be useful to be used throughout the application
+## Hint
+```
+The comments section provides support for any markdown so that you can format your documentation
+```
+
+.align-left     - Left align the element
+.align-center       - Center aligh the element
+.align-right      - Align element to the right
+.align-text-left      - Left aluign text
+.align-text-center     - Center align text
+.align-text-right     - Align text right
+
+Markup: <div class="{$modifiers}">Lorem ipsum dolor sit amet.</div>
+
+Styleguide 1.1
+*/
+
+.align-left {
+  float: left;
+}
+
+.align-center {
+  margin: 0 auto;
+  display: block;
+}
+
+.align-right {
+  float: right;
+}
+
+.align-text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}

@@ -1,0 +1,8 @@
+test-reports
+dist
+.bower-cache/
+.bower-registry/
+.sass-cache/
+node_modules/
+src/bower_components
+*.sublime-*

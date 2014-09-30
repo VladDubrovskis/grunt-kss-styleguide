@@ -1,0 +1,20 @@
+@mixin mee-box-size() {
+  box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+@mixin mee-default-appearance() {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+   appearance: none;
+}
+
+@mixin mee-form-spacing() {
+  margin: $mee-form-spacing 0 $mee-form-spacing 0;
+}
+
+@mixin mee-form-spacing-center() {
+  margin: $mee-form-spacing auto $mee-form-spacing auto;
+}

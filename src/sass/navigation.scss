@@ -1,0 +1,91 @@
+@import "variables";
+@import "mixins";
+
+/*
+Navigation
+
+Styleguide 2
+*/
+
+/*
+Navigation example
+
+A collection of helper classes that might be useful to be used throughout the application
+
+.mee-nav-horizontal - Horizontal navigation
+
+Markup:
+<nav class="{$modifiers}">
+<ul>
+<li><a href="#">Products</a></li>
+<li><a href="#">Add</a></li>
+<li><a href="#">Profile</a></li>
+<li><a href="#">Help</a></li>
+<li><a href="#">Logout</a></li>
+</ul>
+<nav>
+
+Styleguide 2.1
+*/
+
+nav {
+  background-color: $mee-purple;
+  font-size: 0;
+  &.mee-fixed {
+    top:0;
+    z-index: 2;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      display: inline-block;
+      width: 100%;
+      font-size: $mee-base-font-size * 1px;
+        a, a:visited{
+          font-family: $mee-font-lato;
+          font-size: $mee-menu-text;
+          color: $mee-white;
+          text-decoration: none;
+          display: inline-block;
+          width: 100%;
+          padding: 1em 1.5em;
+          @include mee-box-size();
+          &:hover{
+            background-color:$mee-green;
+            color: $mee-black;
+          }
+        }
+      }
+    }
+}
+
+.mee-nav-horizontal {
+  ul {
+    li {
+      width: 100%;
+      a {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.mee-nav-icons {
+  ul {
+    li {
+      width: auto;
+      border-right: 1px solid $mee-menu-line;
+    }
+  }
+}
+
+// styleguide special
+
+#kss-nav {
+  background-color: $mee-purple;
+}
+
+#kss-nav nav > ul{
+  margin: 0;
+}

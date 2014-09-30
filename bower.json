@@ -1,0 +1,18 @@
+{
+  "name": "grunt-kss-styleguide",
+  "description": "A basic setup for automated styleguide generation with KSS, Sass and Grunt",
+  "version": "0.0.1",
+  "demo": "",
+  "main": "",
+  "dependencies": {},
+  "devDependencies": {
+  },
+  "ignore": [
+    "demo",
+    "src",
+    ".editorconfig",
+    ".gitignore",
+    ".jshintrc",
+    "Gruntfile.js"
+  ]
+}

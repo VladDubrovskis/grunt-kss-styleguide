@@ -1,0 +1,82 @@
+$mee-base-font-size: 16;
+
+@function em($target, $context: $mee-base-font-size) {
+  @return ($target / $context) * 1em;
+}
+
+
+/* colours */
+$mee-purple: #512d62;
+$mee-purple-faded: #dcd5e0;
+$mee-purple-faded-text: #a390ac;
+$mee-green:#73cf30;
+$mee-gray-light: #cccccc;
+$mee-gray-medium: #999999;
+$mee-gray-medium-lighter: #777777;
+$mee-gray-dark: #333333;
+$mee-gray-button: #5c676d;
+$mee-status: #bd0c16;
+$mee-warning: #ffdd00;
+$mee-error: #bd0c16;
+$mee-black: #000000;
+$mee-white: #ffffff;
+$mee-overlay-opacity: 0.55;
+$mee-menu-line: #290b37;
+
+
+/* font sizes*/
+$mee-form-error: em(13);
+$mee-form-description: em(13);
+$mee-form-footer: em(13);
+$mee-form-label: em(18);
+$mee-placeholder: em(18);
+$mee-input: em(18);
+$mee-menu-text: em(14);
+$mee-small-link: em(14);
+$mee-input-large: em(21);
+$mee-form-text: em(18);
+$mee-page-text: em(16);
+$mee-outside-link: em(16);
+$mee-banner-text: em(91);
+$mee-banner-slogan:em(10);
+$mee-banner-slogan-small:em(9);
+$mee-h1: em(40);
+$mee-h2: em(36);
+$mee-h3: em(32);
+$mee-h4: em(28);
+$mee-h5: em(24);
+$mee-h6: em(20);
+$mee-h1-popup: em(34);
+$mee-p-popup: em(20);
+$mee-product-title: em(18);
+$mee-module-title: em(20);
+$mee-module-text: em(15);
+
+/* spacing */
+$mee-form-spacing: 0.5em;
+
+$mee-header-spacing: 1em 1.5em;
+$mee-header-icon-spacing: 1.1em 1.5em 0 0;
+
+
+/* form defaults */
+$mee-form-input-width: 100%;
+$mee-form-input-half-width: $mee-form-input-width / 2;
+$mee-form-input-padding: 0.3em;
+
+$mee-font-lato: 'Lato';
+$mee-font-lato-bold: 'Lato-Bold';
+$mee-font-lato-bold-italic: 'Lato-Bold-Italic';
+$mee-font-lato-italic: 'Lato-Italic';
+
+$mee-font-muli: 'Muli';
+$mee-font-muli-italic: 'Muli-Italic';
+
+
+/* Bootstrap Overrides  */
+$mee-fonts-path: 'fonts';
+
+/* Bootstrap Overrides  */
+$grid-columns: 12;
+
+

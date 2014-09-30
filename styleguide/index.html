@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <title>KSS: Living Styleguide</title>
+  <meta name="description" content="">
+  <meta name="generator" content="kss-node" />
+
+  <meta name="viewport" content="width=device-width">
+
+  <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="public/kss.css">
+  <link rel="stylesheet" href="public/style.css">
+
+</head>
+<body><div id="kss-wrapper">
+  <div id="kss-nav">
+    <header id="kss-header">
+      <hgroup><h1>kss-node Styleguide</h1></hgroup>
+    </header>
+    <aside>
+      <nav><ul>
+        <li><a href="index.html">0.0: Overview</a></li>
+        
+          <li><a href="section-1.html">1.0: Element alignmet</a></li>
+        
+          <li><a href="section-2.html">2.0: Navigation</a></li>
+        
+      </ul></nav>
+    </aside>
+  </div>
+  <div role="main" id="kss-main">
+    <article id="kss-content">
+      
+        <h1>grunt-kss-styleguide</h1>
+<p>A basic setup for Grunt + Sass + KSS for automated styleguide generation
+
+</p>
+<h2>Style guide</h2>
+<p>For our style guide we are using Knyle Style Sheets (<a href="https://github.com/kneath/kss">https://github.com/kneath/kss</a>).
+The idea is that you code the styleguide inside your CSS comments, and the Style guide is generated when you run the build command.
+Not that description allows to use markdown for better formatting.
+
+</p>
+<h3>Example comment block</h3>
+<p>/*
+Section heading
+
+</p>
+<p>Description
+
+</p>
+<p>.additional_class      - modifier class description
+
+</p>
+<p>Markup: <header><div class="{$modifiers}"></div></header>
+
+
+</p>
+<p>Styleguide 1
+*/
+
+</p>
+<p>&quot;Styleguide 1&quot; is used in order to create an index, so for example the next element in section could be:
+</p>
+<pre><code>Styleguide 1.1</code></pre>
+<p>or if it is a new section, it would be:
+</p>
+<pre><code>Styleguide 2</code></pre>
+<h3>More info on KSS</h3>
+<ul>
+<li><a href="http://warpspire.com/kss/syntax/">http://warpspire.com/kss/syntax/</a></li>
+<li><a href="https://github.com/kneath/kss">https://github.com/kneath/kss</a></li>
+</ul>
+
+      
+    </article>
+  </div>
+  <footer>
+    
+  </footer>
+  <!-- SCRIPTS -->
+  <script src="public/kss.js"></script>
+  <script src="public/prettify.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      var sidebarAdjust = function() {
+        // Match footer/body height
+        var height = Math.max($(window).height(), $('#kss-main').height());
+
+        if ($(window).width() <= 768) {
+          $('#kss-main, #kss-nav').height('auto');
+        } else {
+          $('#kss-main, #kss-nav').height(height);
+        }
+      };
+
+      $(window).resize(sidebarAdjust);
+      $(window).scroll(sidebarAdjust);
+      sidebarAdjust();
+
+      // Ensure code blocks are highlighted properly...
+      $('pre>code').addClass('prettyprint');
+      prettyPrint();
+
+    });
+  </script>
+
+  
+  
+</div></body>
+</html>
